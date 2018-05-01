@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "inlineSources": false,
+    "declaration": true,
+    "stripInternal": true,
+    "lib": ["es2016", "dom"],
+    "noImplicitReturns": false,
+    "noUnusedLocals": false,
+    "alwaysStrict": false,
+    "rootDir": "src",
+    "outDir": "lib",
+    "baseUrl": ".",
+    "noImplicitThis": false,
+    "noStrictGenericChecks": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "include": ["src"]
+}

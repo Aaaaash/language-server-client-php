@@ -71,9 +71,9 @@ export class PhpServer {
             },
             definitionProvider: true,
             // documentFormattingProvider: true,
-            documentRangeFormattingProvider: false,
+            documentRangeFormattingProvider: true,
             referencesProvider: true,
-            documentLinkProvider: { resolveProvider: false },
+            documentLinkProvider: { resolveProvider: true },
             hoverProvider: true,
             documentHighlightProvider: true,
           },
@@ -85,8 +85,11 @@ export class PhpServer {
       this.codeAction(params);
     });
 
-    this.connection.onHover(params =>
-      Intelephense.provideHover(params.textDocument.uri, params.position));
+    this.connection.onHover((params) => {
+      console.log(params);
+      return Intelephense.provideHover(params.textDocument.uri, params.position);
+    });
+
     // this.connection.onCompletion((params) => this.completion(params));
     // this.connection.onCompletionResolve(item => this.resolveCompletion(item));
     // this.connection.onExecuteCommand((params) => this.executeCommand(params));

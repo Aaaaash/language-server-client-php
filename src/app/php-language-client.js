@@ -134,16 +134,3 @@ listen({
   },
 });
 
-monaco.languages.registerHoverProvider('php', {
-  provideHover(model, position) {
-    return serverconnection.sendRequest('textDocument/hover', {
-      position: {
-        character: position.column,
-        line: position.lineNumber,
-      },
-      textDocument: {
-        uri: 'inmemory://model.php',
-      },
-    });
-  },
-});
